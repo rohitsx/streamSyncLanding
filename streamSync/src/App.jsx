@@ -32,12 +32,19 @@ const Section = ({ id, title, children }) => (
   </section>
 );
 
-const VideoCard = ({ title, placeholder }) => (
+const VideoCard = ({ title, videoUrl }) => (
   <div className="video-card">
     <h3>{title}</h3>
-    <div className="video-placeholder">
-      <img src={placeholder} alt={`${title} Video Placeholder`} />
-      <div className="play-icon">▶</div>
+    <div className="video-container">
+      <iframe
+        width="560"
+        height="315"
+        src={videoUrl}
+        title={title}
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      ></iframe>
     </div>
   </div>
 );
@@ -86,10 +93,10 @@ const App = () => {
 
           <Section id="demo" title="See streamSync in Action">
             <div className="video-grid">
-              <VideoCard title="Project Overview" placeholder="/api/placeholder/640/360" />
-              <VideoCard title="How to Get Started" placeholder="/api/placeholder/640/360" />
+              <VideoCard title="Project Overview" videoUrl="https://www.youtube.com/embed/NSDU34sEPKw" />
             </div>
           </Section>
+
 
           <Section id="download" title="Download streamSync">
             <p>Get started with streamSync by downloading our Chrome extension:</p>
