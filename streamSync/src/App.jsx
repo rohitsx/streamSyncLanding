@@ -35,12 +35,12 @@ const Section = ({ id, title, children }) => (
 const VideoCard = ({ title, videoUrl }) => (
   <div className="video-card">
     <h3>{title}</h3>
-    <div className="video-container">
+    <div className="video-placeholder">
       <iframe
         width="560"
         height="315"
         src={videoUrl}
-        title={title}
+        title={`${title} Video`}
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
@@ -53,8 +53,7 @@ const App = () => {
   const [showAlert, setShowAlert] = useState(false);
 
   const handleDownload = () => {
-    setShowAlert(true);
-    setTimeout(() => setShowAlert(false), 3000);
+    window.location.href = '/streamSync-dist.zip';
   };
 
   return (
@@ -66,6 +65,7 @@ const App = () => {
             <NavLink href="#about">About</NavLink>
             <NavLink href="#demo">Demo</NavLink>
             <NavLink href="#download">Download</NavLink>
+            <NavLink href="#test">Test as a Browser Extension</NavLink>
           </nav>
         </div>
       </header>
@@ -97,7 +97,6 @@ const App = () => {
             </div>
           </Section>
 
-
           <Section id="download" title="Download streamSync">
             <p>Get started with streamSync by downloading our Chrome extension:</p>
             <Button primary onClick={handleDownload}>Download Extension</Button>
@@ -109,6 +108,26 @@ const App = () => {
               className="github-link"
             >
               Check out our GitHub repository
+            </a>
+            <h3>Install the Extension as a Developer:</h3>
+            <ol>
+              <li>Download the extension using the button above.</li>
+              <li>Unzip the file to extract the `dist` folder.</li>
+              <li>Open Chrome and go to <code>chrome://extensions/</code>.</li>
+              <li>Enable "Developer mode" in the top right corner.</li>
+              <li>Click "Load unpacked" and select the extracted `dist` folder.</li>
+            </ol>
+          </Section>
+
+          <Section id="test" title="Test as a Browser Extension">
+            <p>You can also test the streamSync extension directly in your browser:</p>
+            <a
+              href="https://stream-sync-virid.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="test-link"
+            >
+              Test streamSync Now
             </a>
           </Section>
 
