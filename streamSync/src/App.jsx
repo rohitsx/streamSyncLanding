@@ -96,10 +96,16 @@ const App = () => {
               <VideoCard title="Project Overview" videoUrl="https://www.youtube.com/embed/NSDU34sEPKw" />
             </div>
           </Section>
-
           <Section id="download" title="Download streamSync">
             <p>Get started with streamSync by downloading our Chrome extension:</p>
-            <Button primary onClick={handleDownload}>Download Extension</Button>
+            <a
+              href="https://github.com/user-attachments/files/16842085/dist.zip"
+              download
+            >
+              <button className="button primary">
+                Download Extension
+              </button>
+            </a>
             <p>Want to contribute or learn more about the project?</p>
             <a
               href="https://github.com/rohitsx/streamSync"
@@ -112,10 +118,10 @@ const App = () => {
             <h3>Install the Extension as a Developer:</h3>
             <ol>
               <li>Download the extension using the button above.</li>
-              <li>Unzip the file to extract the `dist` folder.</li>
+              <li>Unzip the file to extract the <code>dist</code> folder.</li>
               <li>Open Chrome and go to <code>chrome://extensions/</code>.</li>
               <li>Enable "Developer mode" in the top right corner.</li>
-              <li>Click "Load unpacked" and select the extracted `dist` folder.</li>
+              <li>Click "Load unpacked" and select the extracted <code>dist</code> folder.</li>
             </ol>
           </Section>
 
