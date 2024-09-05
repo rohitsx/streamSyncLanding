@@ -90,12 +90,6 @@ const App = () => {
               <li>Seamlessly integrate with your existing streaming setup</li>
             </ul>
           </Section>
-
-          <Section id="demo" title="See streamSync in Action">
-            <div className="video-grid">
-              <VideoCard title="Project Overview" videoUrl="https://www.youtube.com/embed/NSDU34sEPKw" />
-            </div>
-          </Section>
           <Section id="download" title="Download streamSync">
             <p>Get started with streamSync by downloading our Chrome extension:</p>
             <a
