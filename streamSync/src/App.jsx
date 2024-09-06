@@ -73,8 +73,8 @@ export default function LandingPage() {
       <main className="relative z-10">
         <section className="pt-32 pb-20 min-h-screen flex items-center">
           <div className="container mx-auto px-4 text-center">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 animate-gradient-x">The Future of Streaming Interaction</h1>
-            <p className="text-xl mb-10 text-gray-300 max-w-2xl mx-auto">StreamSync is an innovative project aiming to revolutionize creator-audience interactions using Solana-powered transactions.</p>
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 animate-gradient-x">Chat Better with Voice.</h1>
+            <p className="text-xl mb-10 text-gray-300 max-w-2xl mx-auto">StreamSync integrates voice with super chats for a more interactive streaming experience.</p>
             <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
               <a href="https://stream-sync-virid.vercel.app/" className="inline-flex items-center bg-blue-500 text-white font-bold py-3 px-8 rounded-full hover:bg-blue-600 transition duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
                 Try Beta Version
@@ -115,7 +115,7 @@ export default function LandingPage() {
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-bold text-center mb-8 text-blue-400">About StreamSync</h2>
             <p className="text-lg text-gray-300 max-w-3xl mx-auto text-center mb-10">
-              StreamSync is an ambitious project aimed at revolutionizing the way creators interact with their audience. Our platform will support Solana transactions, allowing users to send cryptocurrency to creators during live streams. Messages from paying users will be prioritized, creating a more engaging and rewarding experience for both creators and viewers. This tool is being designed for creators in finance, ed-tech, or consultancy, enabling direct and meaningful interactions with their audience.
+              StreamSync is a browser extension that enhances creator-audience interaction by allowing users to send priority super chats with Solana, and offers the unique option for creators to engage directly with contributors through voice conversations.
             </p>
             <div className="text-center">
               <a
@@ -139,33 +139,26 @@ export default function LandingPage() {
                 <Code size={32} className="text-blue-400 mr-4" />
                 <div>
                   <h3 className="text-xl font-semibold mb-2">Beta Testing</h3>
-                  <p className="text-gray-400">Currently in progress. Join our beta to help shape the future of StreamSync!</p>
+                  <p className="text-gray-400">The extension is still in development. For testing purposes, you can access the extension at <a href="http://yourdomain.com" className="text-blue-300">this domain</a>.</p>
                 </div>
               </div>
-              <div className="flex items-center mb-8">
-                <Users size={32} className="text-blue-400 mr-4" />
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Community Building</h3>
-                  <p className="text-gray-400">Engaging with early adopters and gathering valuable feedback.</p>
-                </div>
-              </div>
+
+
               <div className="flex items-center">
                 <Tv size={32} className="text-blue-400 mr-4" />
                 <div>
                   <h3 className="text-xl font-semibold mb-2">Official Launch</h3>
-                  <p className="text-gray-400">Upcoming release on the Google Chrome store. Stay tuned!</p>
+                  <p className="text-gray-400">The extension will be released on the Google Chrome store once it's fully developed. Stay tuned!</p>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
+
         <section className="py-20 bg-gray-900">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-4xl font-bold mb-8 text-blue-400">Join the StreamSync Revolution</h2>
-            <p className="text-lg text-gray-300 mb-10 max-w-2xl mx-auto">
-              Be part of the next big thing in creator-audience interaction. While we're still in development, you can access our beta version for testing and provide valuable feedback.
-            </p>
+            <h2 className="text-4xl font-bold mb-8 text-blue-400">Try StreamSync</h2>
             <a href="https://stream-sync.devrohit.tech/" className="inline-flex items-center bg-blue-500 text-white font-bold py-3 px-8 rounded-full hover:bg-blue-600 transition duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
               Access Beta Version
               <ArrowRight className="ml-2" />
