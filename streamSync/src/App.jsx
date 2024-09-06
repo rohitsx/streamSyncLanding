@@ -142,18 +142,28 @@ export default function LandingPage() {
                   <p className="text-gray-400">The extension is still in development. For testing purposes, you can access the extension at <a href="http://yourdomain.com" className="text-blue-300">this domain</a>.</p>
                 </div>
               </div>
-
-
-              <div className="flex items-center">
+              <div className="flex items-center mb-8" >
                 <Tv size={32} className="text-blue-400 mr-4" />
                 <div>
                   <h3 className="text-xl font-semibold mb-2">Official Launch</h3>
                   <p className="text-gray-400">The extension will be released on the Google Chrome store once it's fully developed. Stay tuned!</p>
                 </div>
               </div>
+              <div className="flex items-center  bg-gray-700 p-4 rounded-lg">
+                <div className="mr-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="text-gray-400">[LOG] We know the current UI is shit. We are working on an update to improve it.</p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
+
+
 
 
         <section className="py-20 bg-gray-900">
