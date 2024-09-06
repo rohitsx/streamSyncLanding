@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, Zap, Shield, Globe, FileText, Menu, X, ChevronDown, Code, Users, Tv } from 'lucide-react';
+import { FaGithub } from 'react-icons/fa'
+
 
 const Logo = () => (
   <div className="logo-container">
@@ -42,7 +44,7 @@ export default function LandingPage() {
   return (
     <div className="min-h-screen bg-gray-900 text-white relative">
       <AnimatedBackground />
-      
+
       <header className={`fixed w-full z-50 transition-all duration-300 ${scrollPosition > 50 ? 'bg-gray-900 bg-opacity-90 backdrop-filter backdrop-blur-lg' : 'bg-transparent'}`}>
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <Logo />
@@ -74,13 +76,13 @@ export default function LandingPage() {
             <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 animate-gradient-x">The Future of Streaming Interaction</h1>
             <p className="text-xl mb-10 text-gray-300 max-w-2xl mx-auto">StreamSync is an innovative project aiming to revolutionize creator-audience interactions using Solana-powered transactions.</p>
             <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
-              <a href="https://stream-sync.devrohit.tech/" className="inline-flex items-center bg-blue-500 text-white font-bold py-3 px-8 rounded-full hover:bg-blue-600 transition duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+              <a href="https://stream-sync-virid.vercel.app/" className="inline-flex items-center bg-blue-500 text-white font-bold py-3 px-8 rounded-full hover:bg-blue-600 transition duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
                 Try Beta Version
                 <ArrowRight className="ml-2" />
               </a>
-              <a href="#learn-more" className="inline-flex items-center bg-gray-700 text-white font-bold py-3 px-8 rounded-full hover:bg-gray-600 transition duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
-                Learn More
-                <ChevronDown className="ml-2" />
+              <a href="https://github.com/rohitsx/streamSync" className="inline-flex items-center bg-gray-700 text-white font-bold py-3 px-8 rounded-full hover:bg-gray-600 transition duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                <FaGithub size={24} className="mr-2" /> {/* GitHub icon */}
+                View on GitHub
               </a>
             </div>
           </div>
@@ -90,17 +92,17 @@ export default function LandingPage() {
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-bold text-center mb-12 text-blue-400">Planned Features</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <Feature 
+              <Feature
                 icon={<Zap size={48} />}
                 title="Solana Integration"
                 description="Send and receive Solana seamlessly during streams."
               />
-              <Feature 
+              <Feature
                 icon={<Shield size={48} />}
                 title="Secure Transactions"
                 description="Payments only debited after successful interactions."
               />
-              <Feature 
+              <Feature
                 icon={<Globe size={48} />}
                 title="Multi-Currency Support"
                 description="Plans to integrate more cryptocurrencies in the future."
@@ -116,10 +118,10 @@ export default function LandingPage() {
               StreamSync is an ambitious project aimed at revolutionizing the way creators interact with their audience. Our platform will support Solana transactions, allowing users to send cryptocurrency to creators during live streams. Messages from paying users will be prioritized, creating a more engaging and rewarding experience for both creators and viewers. This tool is being designed for creators in finance, ed-tech, or consultancy, enabling direct and meaningful interactions with their audience.
             </p>
             <div className="text-center">
-              <a 
-                href="https://balsam-orchid-7a6.notion.site/streamSync-Overview-f6da4a368bc841a39542c36961b68c1b" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href="https://balsam-orchid-7a6.notion.site/streamSync-Overview-f6da4a368bc841a39542c36961b68c1b"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center bg-gray-700 text-white font-bold py-3 px-8 rounded-full hover:bg-gray-600 transition duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
               >
                 <FileText className="mr-2" />
