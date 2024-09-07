@@ -76,7 +76,7 @@ export default function LandingPage() {
             <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 animate-gradient-x">Chat Better with Voice.</h1>
             <p className="text-xl mb-10 text-gray-300 max-w-2xl mx-auto">StreamSync integrates voice with super chats for a more interactive streaming experience.</p>
             <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
-              <a href="https://stream-sync-virid.vercel.app/" className="inline-flex items-center bg-blue-500 text-white font-bold py-3 px-8 rounded-full hover:bg-blue-600 transition duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+              <a href="https://streamsync-two.vercel.app/" className="inline-flex items-center bg-blue-500 text-white font-bold py-3 px-8 rounded-full hover:bg-blue-600 transition duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
                 Try Beta Version
                 <ArrowRight className="ml-2" />
               </a>
@@ -139,7 +139,7 @@ export default function LandingPage() {
                 <Code size={32} className="text-blue-400 mr-4" />
                 <div>
                   <h3 className="text-xl font-semibold mb-2">Beta Testing</h3>
-                  <p className="text-gray-400">The extension is still in development. For testing purposes, you can access the extension at <a href="http://yourdomain.com" className="text-blue-300">this domain</a>.</p>
+                  <p className="text-gray-400">The extension is still in development. For testing purposes, you can access the extension at <a href="https://streamsync-two.vercel.app/" className="text-blue-300">this domain</a>.</p>
                 </div>
               </div>
               <div className="flex items-center mb-8" >
