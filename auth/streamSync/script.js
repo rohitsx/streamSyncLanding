@@ -6,7 +6,7 @@ function getAuthToken() {
 }
 
 async function sendAuthToken(code) {
-  const apiUrl = "http://0.0.0.0:8000/api/youtube-auth";
+  const apiUrl = "https://localhost:8000/api/youtube-callback";
   const data = JSON.stringify({ code });
 
   try {
