@@ -1,5 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { ExternalLink, Linkedin, Mail, Twitter, Play, Users, Settings, Download } from "lucide-react";
+import {
+  Download,
+  ExternalLink,
+  Linkedin,
+  Mail,
+  Play,
+  Settings,
+  Twitter,
+  Users,
+  X,
+  XIcon,
+  XSquare,
+} from "lucide-react";
 import { Link } from "react-router";
 
 const Logo = () => (
@@ -24,10 +36,21 @@ const Logo = () => (
         className="animate-pulse"
       />
       <circle cx="30" cy="70" r="10" fill="#60A5FA">
-        <animate attributeName="r" values="10;12;10" dur="2s" repeatCount="indefinite" />
+        <animate
+          attributeName="r"
+          values="10;12;10"
+          dur="2s"
+          repeatCount="indefinite"
+        />
       </circle>
       <circle cx="70" cy="70" r="10" fill="#8B5CF6">
-        <animate attributeName="r" values="10;12;10" dur="2s" repeatCount="indefinite" begin="1s" />
+        <animate
+          attributeName="r"
+          values="10;12;10"
+          dur="2s"
+          repeatCount="indefinite"
+          begin="1s"
+        />
       </circle>
     </svg>
     <div className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-violet-500 bg-clip-text text-transparent">
@@ -41,9 +64,11 @@ const TabButton = ({ active, onClick, children, Icon }) => (
     onClick={onClick}
     aria-pressed={active}
     className={`px-8 py-4 rounded-xl transition-all duration-300 text-lg font-medium flex items-center gap-2
-      ${active 
-        ? "bg-gradient-to-r from-blue-500 to-violet-500 text-white scale-105 shadow-lg shadow-blue-500/25" 
-        : "bg-gray-800/50 text-gray-300 hover:bg-gray-700/70 hover:scale-102"}`}
+      ${
+      active
+        ? "bg-gradient-to-r from-blue-500 to-violet-500 text-white scale-105 shadow-lg shadow-blue-500/25"
+        : "bg-gray-800/50 text-gray-300 hover:bg-gray-700/70 hover:scale-102"
+    }`}
   >
     {Icon && <Icon className="w-5 h-5" />}
     {children}
@@ -51,8 +76,14 @@ const TabButton = ({ active, onClick, children, Icon }) => (
 );
 
 const Card = ({ children, title, className = "" }) => (
-  <div className={`bg-gray-800/50 backdrop-blur-xl p-8 rounded-2xl shadow-xl border border-gray-700/50 hover:border-blue-500/30 transition-colors duration-300 ${className}`}>
-    {title && <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-violet-500 bg-clip-text text-transparent">{title}</h3>}
+  <div
+    className={`bg-gray-800/50 backdrop-blur-xl p-8 rounded-2xl shadow-xl border border-gray-700/50 hover:border-blue-500/30 transition-colors duration-300 ${className}`}
+  >
+    {title && (
+      <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-violet-500 bg-clip-text text-transparent">
+        {title}
+      </h3>
+    )}
     {children}
   </div>
 );
@@ -67,6 +98,7 @@ const YouTubeEmbed = ({ videoId, title }) => (
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       frameBorder="0"
       loading="lazy"
+      allowFullScreen
     />
   </div>
 );
@@ -95,7 +127,9 @@ const StreamSyncLanding = () => {
       content: (
         <Card className="backdrop-blur-xl">
           <p className="text-gray-300 text-lg leading-relaxed">
-            Perfect for creators in finance, ed-tech, or consultancy, StreamSync enables direct audience interaction. Boost engagement and create meaningful connections with your community in real-time.
+            Perfect for creators in finance, ed-tech, or consultancy, StreamSync
+            enables direct audience interaction. Boost engagement and create
+            meaningful connections with your community in real-time.
           </p>
         </Card>
       ),
@@ -117,7 +151,10 @@ const StreamSyncLanding = () => {
                 "Go Live on YouTube",
                 "Open ChatBox from Host Stream",
               ].map((step, index) => (
-                <div key={index} className="flex items-center gap-4 bg-gray-700/30 p-4 rounded-xl">
+                <div
+                  key={index}
+                  className="flex items-center gap-4 bg-gray-700/30 p-4 rounded-xl"
+                >
                   <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center font-bold">
                     {index + 1}
                   </div>
@@ -136,9 +173,12 @@ const StreamSyncLanding = () => {
         <Card>
           <div className="text-center space-y-6">
             <div className="px-8 py-6 bg-gray-700/50 rounded-xl">
-              <h4 className="text-xl font-semibold mb-4 text-blue-400">Chrome Extension Status</h4>
+              <h4 className="text-xl font-semibold mb-4 text-blue-400">
+                Chrome Extension Status
+              </h4>
               <p className="text-gray-300 mb-4">
-                The Chrome extension is currently under review process and will be published soon.
+                The Chrome extension is currently under review process and will
+                be published soon.
               </p>
               <p className="text-sm text-gray-400">
                 Compatible with Chrome 88+ and other Chromium browsers
@@ -164,7 +204,8 @@ const StreamSyncLanding = () => {
             Enhance Your Live Streams
           </h1>
           <p className="text-2xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed">
-            Seamlessly integrate audio calls with YouTube Live chat for an immersive streaming experience
+            Seamlessly integrate audio calls with YouTube Live chat for an
+            immersive streaming experience
           </p>
           <button
             onClick={handleTryNow}
@@ -214,18 +255,19 @@ const StreamSyncLanding = () => {
           <Card title="Join the Community" className="max-w-4xl mx-auto">
             <div className="text-center">
               <p className="text-gray-300 text-lg mb-8">
-                Help shape the future of StreamSync with your valuable feedback and suggestions!
+                Help shape the future of StreamSync with your valuable feedback
+                and suggestions!
               </p>
               <div className="flex justify-center gap-8">
                 {[
                   {
                     Icon: Twitter,
-                    href: "https://twitter.com/placeholder",
+                    href: "https://x.com/rohitsxx",
                     label: "Twitter",
                   },
                   {
                     Icon: Linkedin,
-                    href: "https://linkedin.com/in/placeholder",
+                    href: "https://www.linkedin.com/in/rohiitrb/",
                     label: "LinkedIn",
                   },
                   {
@@ -250,7 +292,7 @@ const StreamSyncLanding = () => {
                 <p className="text-gray-400">
                   Contact: rohittrb@gmail.com
                 </p>
-                <Link 
+                <Link
                   to="/privacy-policy"
                   className="text-gray-400 hover:text-blue-400 transition-colors duration-300"
                 >
