@@ -103,7 +103,7 @@ const StreamSyncLanding = () => {
         <Card>
           <div className="space-y-6">
             <YouTubeEmbed
-              videoId="KqD8kV4B7wI"
+              videoId="rOMajbm8sG4"
               title="StreamSync Setup Tutorial"
             />
             <ol className="space-y-4 list-decimal list-inside">
