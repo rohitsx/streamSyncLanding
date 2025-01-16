@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { ExternalLink, Linkedin, Mail, Twitter } from "lucide-react";
+import { Link } from "react-router"
 
-// Separate Logo component with improved accessibility
+// [Previous Logo, TabButton, Card, and YouTubeEmbed components remain the same]
 const Logo = () => (
   <div className="flex items-center">
     <svg
@@ -31,7 +32,6 @@ const Logo = () => (
   </div>
 );
 
-// Improved TabButton with proper accessibility
 const TabButton = ({ active, onClick, children }) => (
   <button
     onClick={onClick}
@@ -47,7 +47,6 @@ const TabButton = ({ active, onClick, children }) => (
   </button>
 );
 
-// Enhanced Card component with optional title
 const Card = ({ children, title }) => (
   <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
     {title && <h3 className="text-xl font-semibold mb-4">{title}</h3>}
@@ -55,7 +54,6 @@ const Card = ({ children, title }) => (
   </div>
 );
 
-// YouTube iframe component with proper security and loading
 const YouTubeEmbed = ({ videoId, title }) => (
   <div className="aspect-video">
     <iframe
@@ -160,6 +158,7 @@ const StreamSyncLanding = () => {
       </nav>
 
       <main className="container mx-auto px-4">
+        {/* [Previous sections remain the same] */}
         <section className="py-16 text-center">
           <h1 className="text-4xl font-bold mb-4">
             Enhance Your Live Streams
@@ -246,9 +245,17 @@ const StreamSyncLanding = () => {
                   </a>
                 ))}
               </div>
-              <p className="text-sm text-gray-400 mt-4">
-                Contact: rohittrb@gmail.com
-              </p>
+              <div className="mt-6 space-y-2">
+                <p className="text-sm text-gray-400">
+                  Contact: rohittrb@gmail.com
+                </p>
+                <Link 
+                  to="/privacy-policy"
+                  className="text-sm text-gray-400 hover:text-blue-400 transition-colors duration-200"
+                >
+                  Privacy Policy
+                </Link>
+              </div>
             </div>
           </Card>
         </section>

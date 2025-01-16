@@ -8,7 +8,6 @@ export default function App() {
       <Routes>
         <Route path="/" element={<StreamSyncLanding />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-        <Route path="/p" element={<PrivacyPolicy />} />
       </Routes>
     </BrowserRouter>
   );
