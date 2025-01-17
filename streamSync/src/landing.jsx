@@ -141,7 +141,7 @@ const StreamSyncLanding = () => {
         <Card>
           <div className="space-y-8">
             <YouTubeEmbed
-              videoId="rOMajbm8sG4"
+              videoId="XltO9rEGPiE"
               title="StreamSync Setup Tutorial"
             />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -223,7 +223,7 @@ const StreamSyncLanding = () => {
             }`}
           >
             <YouTubeEmbed
-              videoId="KqD8kV4B7wI"
+              videoId="Auui1py6Nvs"
               title="StreamSync Demo Video"
             />
           </div>
