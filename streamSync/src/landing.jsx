@@ -180,9 +180,6 @@ const StreamSyncLanding = () => {
                 The Chrome extension is currently under review process and will
                 be published soon.
               </p>
-              <p className="text-sm text-gray-400">
-                Compatible with Chrome 88+ and other Chromium browsers
-              </p>
             </div>
           </div>
         </Card>
