@@ -1,63 +1,14 @@
 import React, { useEffect, useState } from "react";
 import {
   Download,
-  ExternalLink,
   Linkedin,
   Mail,
   Play,
-  Settings,
   Twitter,
   Users,
-  X,
-  XIcon,
-  XSquare,
 } from "lucide-react";
-import { Link } from "react-router";
-
-const Logo = () => (
-  <div className="flex items-center">
-    <svg
-      className="w-14 h-14 mr-3 transform hover:rotate-12 transition-transform duration-300"
-      viewBox="0 0 100 100"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      <defs>
-        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#8B5CF6" />
-          <stop offset="100%" stopColor="#60A5FA" />
-        </linearGradient>
-      </defs>
-      <path
-        d="M20 80 Q50 20, 80 80"
-        stroke="url(#gradient)"
-        strokeWidth="8"
-        fill="none"
-        className="animate-pulse"
-      />
-      <circle cx="30" cy="70" r="10" fill="#60A5FA">
-        <animate
-          attributeName="r"
-          values="10;12;10"
-          dur="2s"
-          repeatCount="indefinite"
-        />
-      </circle>
-      <circle cx="70" cy="70" r="10" fill="#8B5CF6">
-        <animate
-          attributeName="r"
-          values="10;12;10"
-          dur="2s"
-          repeatCount="indefinite"
-          begin="1s"
-        />
-      </circle>
-    </svg>
-    <div className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-violet-500 bg-clip-text text-transparent">
-      stream<span className="font-extrabold">Sync</span>
-    </div>
-  </div>
-);
+import { Link } from "react-router"; // Updated import
+import Logo from "./logo";
 
 const TabButton = ({ active, onClick, children, Icon }) => (
   <button
@@ -134,52 +85,75 @@ const StreamSyncLanding = () => {
         </Card>
       ),
     },
-    setup: {
-      title: "Easy Setup Process",
-      Icon: Settings,
-      content: (
-        <Card>
-          <div className="space-y-8">
-            <YouTubeEmbed
-              videoId="XltO9rEGPiE"
-              title="StreamSync Setup Tutorial"
-            />
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {[
-                "Install StreamSync extension",
-                "Connect your YouTube account",
-                "Go Live on YouTube",
-                "Open ChatBox from Host Stream",
-              ].map((step, index) => (
-                <div
-                  key={index}
-                  className="flex items-center gap-4 bg-gray-700/30 p-4 rounded-xl"
-                >
-                  <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center font-bold">
-                    {index + 1}
-                  </div>
-                  <p className="text-gray-200">{step}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </Card>
-      ),
-    },
     download: {
       title: "Get Started Now",
       Icon: Download,
       content: (
         <Card>
-          <div className="text-center space-y-6">
-            <div className="px-8 py-6 bg-gray-700/50 rounded-xl">
-              <h4 className="text-xl font-semibold mb-4 text-blue-400">
-                Chrome Extension Status
-              </h4>
-              <p className="text-gray-300 mb-4">
-                The Chrome extension is currently under review process and will
-                be published soon.
-              </p>
+          <div className="mt-12 max-w-2xl mx-auto">
+            <div className="bg-[#0A101F]/60 p-8 rounded-xl shadow-2xl border border-blue-500/20">
+              <h2 className="text-2xl font-bold text-center mb-6 text-blue-400">
+                Download StreamSync
+              </h2>
+              <div className="grid md:grid-cols-2 gap-4 items-center">
+                <div className="bg-[#0A101F]/40 p-6 rounded-lg">
+                  <h3 className="text-lg font-semibold mb-4 text-gray-200">
+                    Chrome Extension
+                  </h3>
+                  <p className="text-gray-400 mb-4">
+                    Simple 6-step installation process
+                  </p>
+                  <a
+                    href="https://github.com/user-attachments/files/18530013/streamSync.zip"
+                    className="w-full block text-center px-4 py-2 bg-blue-500 hover:bg-blue-600 rounded-md transition-colors"
+                  >
+                    Download Extension
+                  </a>
+                </div>
+                <ol className="space-y-2 text-gray-300 bg-[#0A101F]/40 p-6 rounded-lg">
+                  <li className="flex items-center space-x-2">
+                    <span className="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold">
+                      1
+                    </span>
+                    <span>Download Extension</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <span className="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold">
+                      2
+                    </span>
+                    <span>Unzip the file</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <span className="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold">
+                      3
+                    </span>
+                    <span>
+                      Open{" "}
+                      <code className="bg-gray-700 px-1 rounded">
+                        chrome://extensions
+                      </code>
+                    </span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <span className="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold">
+                      4
+                    </span>
+                    <span>Enable "Developer Mode"</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <span className="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold">
+                      5
+                    </span>
+                    <span>Click "Load unpacked"</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <span className="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold">
+                      6
+                    </span>
+                    <span>Select unzipped StreamSync folder</span>
+                  </li>
+                </ol>
+              </div>
             </div>
           </div>
         </Card>
