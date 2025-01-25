@@ -104,7 +104,7 @@ const StreamSyncLanding = () => {
                     Simple 6-step installation process
                   </p>
                   <a
-                    href="../public/streamSync.zip"
+                    href="https://github.com/user-attachments/files/18546799/streamSync.zip"
                     className="w-full block text-center px-4 py-2 bg-blue-500 hover:bg-blue-600 rounded-md transition-colors"
                   >
                     Download Extension
