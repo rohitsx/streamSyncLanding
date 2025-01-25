@@ -194,7 +194,7 @@ const StreamSyncLanding = () => {
             }`}
           >
             <YouTubeEmbed
-              videoId="Auui1py6Nvs"
+              videoId="36hbYPvvbVQ"
               title="StreamSync Demo Video"
             />
           </div>
