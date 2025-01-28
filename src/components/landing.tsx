@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Download,
   Linkedin,
@@ -9,10 +9,22 @@ import {
   Chrome,
   ArrowRight,
 } from "lucide-react";
-import { Link } from "react-router";
+import { Link } from "react-router"; // Updated import for react-router-dom
 import Logo from "./logo";
 
-const TabButton = ({ active, onClick, children, Icon }) => (
+interface TabButtonProps {
+  active: boolean;
+  onClick: () => void;
+  children: React.ReactNode;
+  Icon?: React.ComponentType<{ className?: string }>;
+}
+
+const TabButton: React.FC<TabButtonProps> = ({
+  active,
+  onClick,
+  children,
+  Icon,
+}) => (
   <button
     onClick={onClick}
     aria-pressed={active}
@@ -28,7 +40,13 @@ const TabButton = ({ active, onClick, children, Icon }) => (
   </button>
 );
 
-const Card = ({ children, title, className = "" }) => (
+interface CardProps {
+  children: React.ReactNode;
+  title?: string;
+  className?: string;
+}
+
+const Card: React.FC<CardProps> = ({ children, title, className = "" }) => (
   <div
     className={`bg-gray-800/50 backdrop-blur-xl p-8 rounded-2xl shadow-xl border border-gray-700/50 hover:border-blue-500/30 transition-colors duration-300 ${className}`}
   >
@@ -41,7 +59,12 @@ const Card = ({ children, title, className = "" }) => (
   </div>
 );
 
-const YouTubeEmbed = ({ videoId, title }) => (
+interface YouTubeEmbedProps {
+  videoId: string;
+  title: string;
+}
+
+const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({ videoId, title }) => (
   <div className="aspect-video rounded-xl overflow-hidden shadow-2xl shadow-blue-500/10 border border-gray-700/50">
     <iframe
       width="100%"
@@ -56,8 +79,8 @@ const YouTubeEmbed = ({ videoId, title }) => (
   </div>
 );
 
-const StreamSyncLanding = () => {
-  const [activeTab, setActiveTab] = useState("use");
+const StreamSyncLanding: React.FC = () => {
+  const [activeTab, setActiveTab] = useState<"use" | "download">("use");
   const [showDemo, setShowDemo] = useState(false);
 
   useEffect(() => {
@@ -177,7 +200,7 @@ const StreamSyncLanding = () => {
               <TabButton
                 key={tab}
                 active={activeTab === tab}
-                onClick={() => setActiveTab(tab)}
+                onClick={() => setActiveTab(tab as "use" | "download")}
                 Icon={Icon}
               >
                 {tab.charAt(0).toUpperCase() + tab.slice(1)}

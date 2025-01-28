@@ -1,49 +1,28 @@
-import React, { useState } from "react";
-import { ExternalLink } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import Logo from "./logo";
 
-// Separate Logo component with improved accessibility
-const Logo = () => (
-  <div className="flex items-center">
-    <svg
-      className="w-12 h-12 mr-2"
-      viewBox="0 0 100 100"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      <defs>
-        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#8B5CF6" />
-          <stop offset="100%" stopColor="#60A5FA" />
-        </linearGradient>
-      </defs>
-      <path
-        d="M20 80 Q50 20, 80 80"
-        stroke="url(#gradient)"
-        strokeWidth="8"
-        fill="none"
-      />
-      <circle cx="30" cy="70" r="10" fill="#60A5FA" />
-      <circle cx="70" cy="70" r="10" fill="#8B5CF6" />
-    </svg>
-    <div className="text-2xl font-bold">
-      stream<span className="text-blue-400">Sync</span>
-    </div>
-  </div>
-);
+// Define the props for the Card component
+interface CardProps {
+  children: React.ReactNode;
+  title?: string;
+}
 
 // Enhanced Card component with optional title
-const Card = ({ children, title }) => (
+const Card: React.FC<CardProps> = ({ children, title }) => (
   <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
     {title && <h3 className="text-xl font-semibold mb-4">{title}</h3>}
     {children}
   </div>
 );
 
-const PrivacyPolicy = () => {
+const PrivacyPolicy: React.FC = () => {
   const [showContent, setShowContent] = useState(false);
 
   // Scroll to the content after a short delay
-  setTimeout(() => setShowContent(true), 500);
+  useEffect(() => {
+    const timer = setTimeout(() => setShowContent(true), 500);
+    return () => clearTimeout(timer); // Cleanup the timer on component unmount
+  }, []);
 
   return (
     <div className="min-h-screen bg-gray-900 text-white">
