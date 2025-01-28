@@ -6,8 +6,10 @@ import {
   Play,
   Twitter,
   Users,
+  Chrome,
+  ArrowRight,
 } from "lucide-react";
-import { Link } from "react-router"; // Updated import
+import { Link } from "react-router";
 import Logo from "./logo";
 
 const TabButton = ({ active, onClick, children, Icon }) => (
@@ -16,10 +18,10 @@ const TabButton = ({ active, onClick, children, Icon }) => (
     aria-pressed={active}
     className={`px-8 py-4 rounded-xl transition-all duration-300 text-lg font-medium flex items-center gap-2
       ${
-      active
-        ? "bg-gradient-to-r from-blue-500 to-violet-500 text-white scale-105 shadow-lg shadow-blue-500/25"
-        : "bg-gray-800/50 text-gray-300 hover:bg-gray-700/70 hover:scale-102"
-    }`}
+        active
+          ? "bg-gradient-to-r from-blue-500 to-violet-500 text-white scale-105 shadow-lg shadow-blue-500/25"
+          : "bg-gray-800/50 text-gray-300 hover:bg-gray-700/70 hover:scale-102"
+      }`}
   >
     {Icon && <Icon className="w-5 h-5" />}
     {children}
@@ -90,69 +92,41 @@ const StreamSyncLanding = () => {
       Icon: Download,
       content: (
         <Card>
-          <div className="mt-12 max-w-2xl mx-auto">
-            <div className="bg-[#0A101F]/60 p-8 rounded-xl shadow-2xl border border-blue-500/20">
-              <h2 className="text-2xl font-bold text-center mb-6 text-blue-400">
-                Download StreamSync
-              </h2>
-              <div className="grid md:grid-cols-2 gap-4 items-center">
-                <div className="bg-[#0A101F]/40 p-6 rounded-lg">
-                  <h3 className="text-lg font-semibold mb-4 text-gray-200">
-                    Chrome Extension
-                  </h3>
-                  <p className="text-gray-400 mb-4">
-                    Simple 6-step installation process
-                  </p>
-                  <a
-                    href="https://github.com/user-attachments/files/18546799/streamSync.zip"
-                    className="w-full block text-center px-4 py-2 bg-blue-500 hover:bg-blue-600 rounded-md transition-colors"
-                  >
-                    Download Extension
-                  </a>
+          <div className="mt-8 max-w-3xl mx-auto">
+            <div className="bg-gradient-to-r from-blue-500/10 to-violet-500/10 p-8 rounded-2xl shadow-2xl border border-blue-500/20">
+              <div className="text-center mb-8">
+                <h2 className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-violet-500 bg-clip-text text-transparent mb-4">
+                  Download StreamSync
+                </h2>
+              </div>
+
+              <div className="grid gap-6">
+                <div className="bg-gray-900/60 p-6 rounded-xl border border-gray-700/50 hover:border-blue-500/30 transition-all duration-300 transform hover:scale-102">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-4">
+                      <div className="p-3 bg-blue-500/20 rounded-lg">
+                        <Chrome className="w-6 h-6 text-blue-400" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-semibold text-gray-200">
+                          Chrome Extension
+                        </h3>
+                        <p className="text-gray-400 text-sm mt-1">
+                          Recommended installation method
+                        </p>
+                      </div>
+                    </div>
+                    <a
+                      href="https://chromewebstore.google.com/detail/streamsync/ppjkekdbgjemggkeicnfochciccdhkhk"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-violet-500 hover:from-blue-600 hover:to-violet-600 rounded-lg font-medium transition-all duration-300 group"
+                    >
+                      Download
+                      <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
+                    </a>
+                  </div>
                 </div>
-                <ol className="space-y-2 text-gray-300 bg-[#0A101F]/40 p-6 rounded-lg">
-                  <li className="flex items-center space-x-2">
-                    <span className="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold">
-                      1
-                    </span>
-                    <span>Download Extension</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <span className="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold">
-                      2
-                    </span>
-                    <span>Unzip the file</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <span className="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold">
-                      3
-                    </span>
-                    <span>
-                      Open{" "}
-                      <code className="bg-gray-700 px-1 rounded">
-                        chrome://extensions
-                      </code>
-                    </span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <span className="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold">
-                      4
-                    </span>
-                    <span>Enable "Developer Mode"</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <span className="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold">
-                      5
-                    </span>
-                    <span>Click "Load unpacked"</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <span className="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold">
-                      6
-                    </span>
-                    <span>Select unzipped StreamSync folder</span>
-                  </li>
-                </ol>
               </div>
             </div>
           </div>
@@ -193,10 +167,7 @@ const StreamSyncLanding = () => {
               showDemo ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <YouTubeEmbed
-              videoId="36hbYPvvbVQ"
-              title="StreamSync Demo Video"
-            />
+            <YouTubeEmbed videoId="36hbYPvvbVQ" title="StreamSync Demo Video" />
           </div>
         </section>
 
@@ -260,9 +231,7 @@ const StreamSyncLanding = () => {
                 ))}
               </div>
               <div className="mt-8 space-y-3">
-                <p className="text-gray-400">
-                  Contact: rohittrb@gmail.com
-                </p>
+                <p className="text-gray-400">Contact: rohittrb@gmail.com</p>
                 <Link
                   to="/privacy-policy"
                   className="text-gray-400 hover:text-blue-400 transition-colors duration-300"
