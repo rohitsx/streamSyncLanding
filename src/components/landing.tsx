@@ -170,16 +170,6 @@ const StreamSyncLanding: React.FC = () => {
         <div className="container mx-auto px-4 md:px-6 py-4">
           <div className="flex justify-between items-center">
             <Logo />
-            <button
-              className="md:hidden"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            >
-              {mobileMenuOpen ? (
-                <X className="w-6 h-6 text-gray-300" />
-              ) : (
-                <Menu className="w-6 h-6 text-gray-300" />
-              )}
-            </button>
           </div>
         </div>
       </nav>
