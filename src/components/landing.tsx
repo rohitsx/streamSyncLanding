@@ -8,8 +8,7 @@ import {
   Users,
   Chrome,
   ArrowRight,
-  Menu,
-  X,
+  TriangleAlert, // Added for the note icon
 } from "lucide-react";
 import { Link } from "react-router";
 import Logo from "./logo";
@@ -87,7 +86,6 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({ videoId, title }) => (
 const StreamSyncLanding: React.FC = () => {
   const [activeTab, setActiveTab] = useState<"use" | "download">("use");
   const [showDemo, setShowDemo] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => setShowDemo(true), 500);
@@ -166,6 +164,26 @@ const StreamSyncLanding: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white">
+      {/* ===== START: ADDED NOTE ===== */}
+      <div className="bg-yellow-900/40 border-b border-yellow-700/50 text-yellow-200">
+        <div className="container mx-auto flex items-center justify-center gap-3 md:gap-4 px-4 py-3 text-center">
+          <TriangleAlert className="w-8 h-8 md:w-6 md:h-6 flex-shrink-0" />
+          <p className="text-sm md:text-base">
+            <strong>Project Update:</strong> This project is currently inactive. If
+            you're genuinely interested in its development, please{" "}
+            <a
+              href="mailto:rohittrb@gmail.com?subject=Interest in StreamSync Project"
+              className="font-semibold underline hover:text-white transition-colors"
+            >
+              reach out to the developer
+            </a>
+            . If not, please tell us what brought you here so we can understand
+            the recent traffic.
+          </p>
+        </div>
+      </div>
+      {/* ===== END: ADDED NOTE ===== */}
+
       <nav className="border-b border-gray-800/50 backdrop-blur-xl sticky top-0 z-50">
         <div className="container mx-auto px-4 md:px-6 py-4">
           <div className="flex justify-between items-center">
