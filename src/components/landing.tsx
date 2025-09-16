@@ -177,8 +177,13 @@ const StreamSyncLanding: React.FC = () => {
             >
               reach out to the developer
             </a>
-            . If not, please tell us what brought you here so we can understand
-            the recent traffic.
+            .{" "}
+            {/* --- Updated text below --- */}
+            <strong>
+              As an incentive, the first 3 people to email will receive $50.
+            </strong>{" "}
+            If not, please tell us what brought you here so we can understand the
+            recent traffic.
           </p>
         </div>
       </div>
