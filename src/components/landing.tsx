@@ -172,7 +172,7 @@ const StreamSyncLanding: React.FC = () => {
             <strong>Project Update:</strong> This project is currently inactive. If
             you're genuinely interested in its development, please{" "}
             <a
-              href="mailto:rohittrb@gmail.com?subject=Interest in StreamSync Project"
+              href="mailto:rohiitrb@gmail.com?subject=Interest in StreamSync Project"
               className="font-semibold underline hover:text-white transition-colors"
             >
               reach out to the developer
@@ -268,7 +268,7 @@ const StreamSyncLanding: React.FC = () => {
                   },
                   {
                     Icon: Mail,
-                    href: "mailto:rohittrb@gmail.com",
+                    href: "mailto:rohiitrb@gmail.com",
                     label: "Email",
                   },
                 ].map(({ Icon, href, label }, index) => (
@@ -288,7 +288,7 @@ const StreamSyncLanding: React.FC = () => {
                 ))}
               </div>
               <div className="mt-6 md:mt-8 space-y-2 md:space-y-3">
-                <p className="text-gray-400">Contact: rohittrb@gmail.com</p>
+                <p className="text-gray-400">Contact: rohiitrb@gmail.com</p>
                 <Link
                   to="/privacy-policy"
                   className="text-gray-400 hover:text-blue-400 transition-colors duration-300"
