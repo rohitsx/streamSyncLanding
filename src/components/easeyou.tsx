@@ -8,7 +8,6 @@ import {
   DollarSign,
   UserCheck,
   Sparkles,
-  Heart,
   Globe,
 } from "lucide-react";
 import { EaseYouLogo } from "./ui/logo";
@@ -19,7 +18,7 @@ const EaseYou = () => (
       {/* Header */}
       <div className="text-center mb-8">
         <div className="flex items-center justify-center mb-6">
-        <EaseYouLogo/>
+          <EaseYouLogo />
         </div>
         <h1 className="text-4xl md:text-5xl font-bold mb-3 text-white">
           EaseYou
@@ -62,12 +61,12 @@ const EaseYou = () => (
                 Work just <strong className="text-white">2 hours a day</strong> = earn at least{" "}
                 <strong className="text-green-400">₹720 daily</strong>
               </p>
-                   <div className="flex items-start gap-3">
-                  <Globe className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
-                  <p className="text-blue-200 text-sm font-medium">
-                    <strong className="text-blue-300">International rates may vary.</strong> We welcome your rate recommendations.
-                  </p>
-                </div>
+              <div className="flex items-start gap-3">
+                <Globe className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
+                <p className="text-blue-200 text-sm font-medium">
+                  <strong className="text-blue-300">International rates may vary.</strong> We welcome your rate recommendations.
+                </p>
+              </div>
             </div>
           </div>
 
