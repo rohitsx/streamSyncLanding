@@ -1,307 +1,44 @@
-import { useEffect, useState } from "react";
-import {
-  Download,
-  Linkedin,
-  Mail,
-  Play,
-  Twitter,
-  Users,
-  Chrome,
-  ArrowRight,
-  TriangleAlert, // Added for the note icon
-} from "lucide-react";
-import { Link } from "react-router";
-import Logo from "./logo";
+import { useState } from "react";
+import { Heart, Play } from "lucide-react";
+import TabButton from "./ui/tab-button";
+import Header from "./header";
+import EaseYou from "./easeyou";
+import StreamSync from "./streamsync";
+import Community from "./community";
 
-interface TabButtonProps {
-  active: boolean;
-  onClick: () => void;
-  children: React.ReactNode;
-  Icon?: React.ComponentType<{ className?: string }>;
-  className?: string;
-}
-
-const TabButton: React.FC<TabButtonProps> = ({
-  active,
-  onClick,
-  children,
-  Icon,
-  className = "",
-}) => (
-  <button
-    onClick={onClick}
-    aria-pressed={active}
-    className={`px-4 md:px-8 py-3 md:py-4 rounded-xl transition-all duration-300 text-base md:text-lg font-medium flex items-center gap-2 w-full md:w-auto justify-center
-      ${
-        active
-          ? "bg-gradient-to-r from-blue-500 to-violet-500 text-white scale-105 shadow-lg shadow-blue-500/25"
-          : "bg-gray-800/50 text-gray-300 hover:bg-gray-700/70 hover:scale-102"
-      }
-      ${className}`}
-  >
-    {Icon && <Icon className="w-4 h-4 md:w-5 md:h-5" />}
-    {children}
-  </button>
-);
-
-interface CardProps {
-  children: React.ReactNode;
-  title?: string;
-  className?: string;
-}
-
-const Card: React.FC<CardProps> = ({ children, title, className = "" }) => (
-  <div
-    className={`bg-gray-800/50 backdrop-blur-xl p-4 md:p-8 rounded-2xl shadow-xl border border-gray-700/50 hover:border-blue-500/30 transition-colors duration-300 ${className}`}
-  >
-    {title && (
-      <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-blue-400 to-violet-500 bg-clip-text text-transparent">
-        {title}
-      </h3>
-    )}
-    {children}
-  </div>
-);
-
-interface YouTubeEmbedProps {
-  videoId: string;
-  title: string;
-}
-
-const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({ videoId, title }) => (
-  <div className="aspect-video rounded-xl overflow-hidden shadow-2xl shadow-blue-500/10 border border-gray-700/50">
-    <iframe
-      width="100%"
-      height="100%"
-      src={`https://www.youtube.com/embed/${videoId}`}
-      title={title}
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      frameBorder="0"
-      loading="lazy"
-      allowFullScreen
-    />
-  </div>
-);
-
-const StreamSyncLanding: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<"use" | "download">("use");
-  const [showDemo, setShowDemo] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setShowDemo(true), 500);
-    return () => clearTimeout(timer);
-  }, []);
-
-  const handleTryNow = () => {
-    setActiveTab("download");
-    const featuresSection = document.getElementById("features");
-    if (featuresSection) {
-      featuresSection.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
-  const tabContent = {
-    use: {
-      title: "Connect with Your Audience",
-      Icon: Users,
-      content: (
-        <Card className="backdrop-blur-xl">
-          <p className="text-gray-300 text-base md:text-lg leading-relaxed">
-            Perfect for creators in finance, ed-tech, or consultancy, StreamSync
-            enables direct audience interaction. Boost engagement and create
-            meaningful connections with your community in real-time.
-          </p>
-        </Card>
-      ),
-    },
-    download: {
-      title: "Get Started Now",
-      Icon: Download,
-      content: (
-        <Card>
-          <div className="mt-4 md:mt-8 max-w-3xl mx-auto">
-            <div className="bg-gradient-to-r from-blue-500/10 to-violet-500/10 p-4 md:p-8 rounded-2xl shadow-2xl border border-blue-500/20">
-              <div className="text-center mb-6 md:mb-8">
-                <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-400 to-violet-500 bg-clip-text text-transparent mb-4">
-                  Download StreamSync
-                </h2>
-              </div>
-
-              <div className="grid gap-4 md:gap-6">
-                <div className="bg-gray-900/60 p-4 md:p-6 rounded-xl border border-gray-700/50 hover:border-blue-500/30 transition-all duration-300 transform hover:scale-102">
-                  <div className="flex flex-col md:flex-row items-center gap-4 md:justify-between">
-                    <div className="flex items-center gap-4">
-                      <div className="p-3 bg-blue-500/20 rounded-lg">
-                        <Chrome className="w-6 h-6 text-blue-400" />
-                      </div>
-                      <div>
-                        <h3 className="text-lg md:text-xl font-semibold text-gray-200">
-                          Chrome Extension
-                        </h3>
-                        <p className="text-gray-400 text-sm mt-1">
-                          Recommended installation method
-                        </p>
-                      </div>
-                    </div>
-                    <a
-                      href="https://chromewebstore.google.com/detail/streamsync/ppjkekdbgjemggkeicnfochciccdhkhk"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full md:w-auto flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-violet-500 hover:from-blue-600 hover:to-violet-600 rounded-lg font-medium transition-all duration-300 group"
-                    >
-                      Download
-                      <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </Card>
-      ),
-    },
-  };
+const DualProjectLanding: React.FC = () => {
+  const [activeProject, setActiveProject] = useState<"easeyou" | "streamsync">("easeyou");
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white">
-      {/* ===== START: ADDED NOTE ===== */}
-      <div className="bg-yellow-900/40 border-b border-yellow-700/50 text-yellow-200">
-        <div className="container mx-auto flex items-center justify-center gap-3 md:gap-4 px-4 py-3 text-center">
-          <TriangleAlert className="w-8 h-8 md:w-6 md:h-6 flex-shrink-0" />
-          <p className="text-sm md:text-base">
-            <strong>Project Update:</strong> This project is currently inactive. If
-            you're genuinely interested in its development, please{" "}
-            <a
-              href="mailto:rohiitrb@gmail.com?subject=Interest in StreamSync Project"
-              className="font-semibold underline hover:text-white transition-colors"
-            >
-              reach out to the developer
-            </a>
-            .{" "}
-            {/* --- Updated text below --- */}
-            <strong>
-              As an incentive, the first 3 people to email will receive $50.
-            </strong>{" "}
-            If not, please tell us what brought you here so we can understand the
-            recent traffic.
-          </p>
-        </div>
-      </div>
-      {/* ===== END: ADDED NOTE ===== */}
-
-      <nav className="border-b border-gray-800/50 backdrop-blur-xl sticky top-0 z-50">
-        <div className="container mx-auto px-4 md:px-6 py-4">
-          <div className="flex justify-between items-center">
-            <Logo />
-          </div>
-        </div>
-      </nav>
+      <Header />
 
       <main className="container mx-auto px-4 md:px-6">
-        <section className="py-12 md:py-24 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-blue-400 to-violet-500 bg-clip-text text-transparent">
-            Enhance Your Live Streams
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 md:mb-12 max-w-2xl mx-auto leading-relaxed">
-            Seamlessly integrate audio calls with YouTube Live chat for an
-            immersive streaming experience
-          </p>
-          <button
-            onClick={handleTryNow}
-            className="px-8 md:px-12 py-4 md:py-6 bg-gradient-to-r from-blue-500 to-violet-500 hover:from-blue-600 hover:to-violet-600 rounded-xl text-lg md:text-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl shadow-blue-500/25 flex items-center gap-3 mx-auto"
-          >
-            <Play className="w-5 h-5 md:w-6 md:h-6" />
-            Try StreamSync
-          </button>
-        </section>
-
-        <section className="py-8 md:py-16">
-          <div
-            className={`max-w-4xl mx-auto transition-all duration-1000 transform ${
-              showDemo ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
-          >
-            <YouTubeEmbed videoId="36hbYPvvbVQ" title="StreamSync Demo Video" />
-          </div>
-        </section>
-
-        <section className="py-8 md:py-16" id="features">
-          <div className="flex flex-col md:flex-row justify-center gap-4 mb-8 md:mb-12">
-            {Object.entries(tabContent).map(([tab, { Icon }]) => (
-              <TabButton
-                key={tab}
-                active={activeTab === tab}
-                onClick={() => setActiveTab(tab as "use" | "download")}
-                Icon={Icon}
-              >
-                {tab.charAt(0).toUpperCase() + tab.slice(1)}
-              </TabButton>
-            ))}
+        <section className="py-12 md:py-16">
+          <div className="flex flex-col md:flex-row justify-center gap-4 mb-8">
+            <TabButton
+              active={activeProject === "easeyou"}
+              onClick={() => setActiveProject("easeyou")}
+              Icon={Heart}
+            >
+              EaseYou (New!)
+            </TabButton>
+            <TabButton
+              active={activeProject === "streamsync"}
+              onClick={() => setActiveProject("streamsync")}
+              Icon={Play}
+            >
+              StreamSync
+            </TabButton>
           </div>
 
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8 text-center">
-              {tabContent[activeTab].title}
-            </h2>
-            {tabContent[activeTab].content}
-          </div>
+          {activeProject === "easeyou" ? <EaseYou /> : <StreamSync />}
         </section>
 
-        <section className="py-12 md:py-24" id="contact">
-          <Card title="Join the Community" className="max-w-4xl mx-auto">
-            <div className="text-center">
-              <p className="text-gray-300 text-base md:text-lg mb-6 md:mb-8">
-                Help shape the future of StreamSync with your valuable feedback
-                and suggestions!
-              </p>
-              <div className="flex justify-center gap-6 md:gap-8">
-                {[
-                  {
-                    Icon: Twitter,
-                    href: "https://x.com/rohitsxx",
-                    label: "Twitter",
-                  },
-                  {
-                    Icon: Linkedin,
-                    href: "https://www.linkedin.com/in/rohiitrb/",
-                    label: "LinkedIn",
-                  },
-                  {
-                    Icon: Mail,
-                    href: "mailto:rohiitrb@gmail.com",
-                    label: "Email",
-                  },
-                ].map(({ Icon, href, label }, index) => (
-                  <a
-                    key={index}
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-300 hover:text-blue-400 transition-colors duration-300 transform hover:scale-110"
-                    aria-label={label}
-                  >
-                    <Icon
-                      className="w-6 h-6 md:w-8 md:h-8"
-                      aria-hidden="true"
-                    />
-                  </a>
-                ))}
-              </div>
-              <div className="mt-6 md:mt-8 space-y-2 md:space-y-3">
-                <p className="text-gray-400">Contact: rohiitrb@gmail.com</p>
-                <Link
-                  to="/privacy-policy"
-                  className="text-gray-400 hover:text-blue-400 transition-colors duration-300"
-                >
-                  Privacy Policy
-                </Link>
-              </div>
-            </div>
-          </Card>
-        </section>
+        <Community />
       </main>
     </div>
   );
 };
 
-export default StreamSyncLanding;
+export default DualProjectLanding;
