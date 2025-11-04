@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Heart, Play } from "lucide-react";
 import TabButton from "./ui/tab-button";
 import Header from "./header";
@@ -7,7 +7,12 @@ import StreamSync from "./streamsync";
 import Community from "./community";
 
 const DualProjectLanding: React.FC = () => {
+  const hash = useRef(window.location.hash)
   const [activeProject, setActiveProject] = useState<"easeyou" | "streamsync">("easeyou");
+
+  useEffect(() => {
+    hash.current === '#streamsync' && setActiveProject("streamsync")
+  }, [])
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white">
