@@ -162,9 +162,6 @@ const EaseYou = () => (
             <p className="text-gray-400 text-sm mt-4">
               Email: <strong className="text-white">rohiitrb@gmail.com</strong>
             </p>
-            <p className="text-gray-400 text-sm mt-1">
-              Include your WhatsApp number or best contact method
-            </p>
           </div>
         </div>
       </div>
